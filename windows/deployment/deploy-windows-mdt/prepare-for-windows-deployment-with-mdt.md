@@ -209,7 +209,7 @@ The final result of either method is shown below. The **MDT_BA** account will be
 
 When creating a reference image, you need an account for MDT. The MDT build account is used for Windows Preinstallation Environment (Windows PE) to connect to MDT01.
 
-To create an MDT build account, open an elevalted Windows PowerShell prompt on DC01 and enter the following (copy and paste the entire command, taking care to notice the scroll bar at the bottom). This command will create the MDT_BA user account and set the password to "pass@word1":
+To create an MDT build account, open an elevated Windows PowerShell prompt on DC01 and enter the following (copy and paste the entire command, taking care to notice the scroll bar at the bottom). This command will create the MDT_BA user account and set the password to "pass@word1":
 
 ```powershell
 New-ADUser -Name MDT_BA -UserPrincipalName MDT_BA -path "OU=Service Accounts,OU=Accounts,OU=Contoso,DC=CONTOSO,DC=COM" -Description "MDT Build Account" -AccountPassword (ConvertTo-SecureString "pass@word1" -AsPlainText -Force) -ChangePasswordAtLogon $false -PasswordNeverExpires $true -Enabled $true
